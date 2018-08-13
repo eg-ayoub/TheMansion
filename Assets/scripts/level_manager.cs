@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class level_manager : MonoBehaviour {
 
-	[SerializeField]
 	int level;
 	PlayerHealthManager playerHealth;
 	bool key_taken;
@@ -14,6 +13,7 @@ public class level_manager : MonoBehaviour {
 	GameObject transitionText;
 
 	private void Start() {
+		level =SceneManager.GetActiveScene().buildIndex;
 		playerHealth = PlayerInstanciationScript.Player.GetComponentInChildren<PlayerHealthManager>();
 		PlayerInstanciationScript.Player.transform.position = transform.position;
 		key_taken = false;

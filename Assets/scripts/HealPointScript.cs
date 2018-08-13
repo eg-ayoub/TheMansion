@@ -37,9 +37,6 @@ public class HealPointScript : MonoBehaviour {
 	}
 
 	IEnumerator Disable(){
-		GameObject current = Instantiate(Resources.Load("particleflash")) as GameObject;
-		current.transform.parent = transform;
-		current.transform.localPosition = Vector3.zero;
 		GetComponent<AudioSource>().Play();
 		GetComponent<CircleCollider2D>().enabled = false;
 		GetComponentInChildren<SpriteRenderer>().enabled = false;
