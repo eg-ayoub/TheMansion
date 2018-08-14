@@ -129,6 +129,7 @@ public class PlayerMovementModifier : MonoBehaviour {
                         GetComponent<AudioSource>().enabled = true;
                         Speed = horizontal * maxRunSpeed * groundVector;
                         anim.SetFloat("runBlend", Mathf.Abs(horizontal));
+                        canDoubleJump = true;
                     }
                     else
                     {
