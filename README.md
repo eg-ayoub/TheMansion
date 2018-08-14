@@ -1,7 +1,7 @@
 # TheMansion
 Even Games submission for ludum dare game jam august 2018
 
-#Info
+# Info
 The movement mechanics in this game are inspired by our incoming game, "The Birth".
 Some of the code is very unclean but that is only natural because it's a game jam submission.
 
