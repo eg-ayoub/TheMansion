@@ -80,6 +80,7 @@ public class PlayerMovementModifier : MonoBehaviour {
 
     private void Update()
     {
+        
         if (!paused)
         {
             if(!swimming)
@@ -154,7 +155,6 @@ public class PlayerMovementModifier : MonoBehaviour {
                         anim.SetTrigger("jump");
                         GetComponent<AudioSource>().enabled = false;
                         Speed.y = VerticalJumpSpeed;
-                        Debug.Log("Jump");
                     }
                     else if (PlayerOnLeftWall || PlayerOnRightWall)
                     {
@@ -167,7 +167,6 @@ public class PlayerMovementModifier : MonoBehaviour {
                         GetComponent<AudioSource>().enabled = false;
                         Speed.y = VerticalJumpSpeed;
                         canDoubleJump = false;
-                        Debug.Log("DoubleJump");
                     }
 
                 }

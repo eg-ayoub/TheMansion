@@ -107,6 +107,7 @@ public class PlayerHealthManager : MonoBehaviour {
 
     IEnumerator EndGame(){
         gameOver.SetActive(true);
+        gameOver.GetComponent<AudioSource>().Play();
         ToggleGamePaused();
         for(int i =0; i < 120; i++){
             yield return null;
@@ -127,6 +128,7 @@ public class PlayerHealthManager : MonoBehaviour {
     }
 
     private void Update() {
+        //Heal(5);
         if(Input.GetButtonDown("Pause") && canTogglepause){
             Debug.Log("pause!");
             ToggleGamePaused();
