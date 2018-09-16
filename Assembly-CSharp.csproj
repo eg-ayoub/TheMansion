@@ -71,6 +71,7 @@
      <Compile Include="Assets\scripts\FallingPlatScript.cs" />
      <Compile Include="Assets\scripts\GroundVectorCalculator.cs" />
      <Compile Include="Assets\scripts\HealPointScript.cs" />
+     <Compile Include="Assets\scripts\holder.cs" />
      <Compile Include="Assets\scripts\HUDStay.cs" />
      <Compile Include="Assets\scripts\IntermediateSensorManager.cs" />
      <Compile Include="Assets\scripts\keyScript.cs" />
