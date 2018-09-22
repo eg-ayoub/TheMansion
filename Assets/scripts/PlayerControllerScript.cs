@@ -35,7 +35,7 @@ public class PlayerControllerScript : MonoBehaviour {
             JumpButtonDown = Input.GetButtonDown("Jump");
             JumpButton = Input.GetButton("Jump");
             horizontal = Input.GetAxis("Horizontal");
-            vertical = Input.GetAxis("Vertical");
+            //vertical = Input.GetAxis("Vertical");
 
             if (horizontal > 0)
             {

@@ -22,6 +22,7 @@ public class PlayerHealthManager : MonoBehaviour {
     [SerializeField]
     GameObject gameOver, Pause;
     Object[] objects;
+    int checkpoint;
  	private void Start() {
 
         maxHP = 10;
@@ -30,6 +31,7 @@ public class PlayerHealthManager : MonoBehaviour {
         sceneNow = 0;
         paused = false;
         canTogglepause = true;
+        checkpoint = 0;
     }
 	// Update is called once per frame
 	void TakeDamage(int damage)
@@ -40,7 +42,7 @@ public class PlayerHealthManager : MonoBehaviour {
 			CameraShakerScript.cam.RandomShake();
             if (damage >= HP)
             {
-                StartCoroutine("EndGame");
+                StartCoroutine("ReturnToCheckpoint");
             }
             else
             {
@@ -103,20 +105,26 @@ public class PlayerHealthManager : MonoBehaviour {
 
     public void IncrementScene(){
         sceneNow ++;
+        if(sceneNow == 10){
+            checkpoint = 10;
+        }
+        if(sceneNow == 20){
+            checkpoint = 20;
+        }
     }
 
-    IEnumerator EndGame(){
+    IEnumerator ReturnToCheckpoint(){
+        sceneNow = checkpoint;
         gameOver.SetActive(true);
         gameOver.GetComponent<AudioSource>().Play();
         ToggleGamePaused();
         for(int i =0; i < 120; i++){
             yield return null;
         }
-
-        foreach(MonoBehaviour obj in GameObject.FindObjectsOfType(typeof(MonoBehaviour))){
-            Destroy(obj.gameObject);
-        }
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(sceneNow);
+        ToggleGamePaused();
+        gameOver.SetActive(false);
+        SetHP(3);
     }
 
     public void ToggleGamePaused(){

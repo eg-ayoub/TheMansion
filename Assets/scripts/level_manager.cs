@@ -41,6 +41,7 @@ public class level_manager : MonoBehaviour {
 			yield return null;
 		}
 		playerHealth.ToggleGamePaused();
+		PlayerInstanciationScript.Player.GetComponentInChildren<PlayerMovementModifier>().SetSpeed(Vector2.zero);
 		SceneManager.LoadSceneAsync(level + 1);	
 	}
 }
