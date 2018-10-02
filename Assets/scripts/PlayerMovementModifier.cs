@@ -43,6 +43,8 @@ public class PlayerMovementModifier : MonoBehaviour {
     bool swimming;
     bool onSurface;
 
+    bool hitTrampoline, justHitTrampoline;
+
 
     Animator anim;
 	void Start () {
@@ -131,9 +133,7 @@ public class PlayerMovementModifier : MonoBehaviour {
                         Speed = horizontal * maxRunSpeed * groundVector;
                         anim.SetFloat("runBlend", Mathf.Abs(horizontal));
                         canDoubleJump = true;
-                    }
-                    else
-                    {
+                    }else{
                         Speed.x = horizontal * maxAirborneSpeed;
                     }
                 }
@@ -177,9 +177,13 @@ public class PlayerMovementModifier : MonoBehaviour {
                 if(Speed.y < 0){
                     anim.SetTrigger("fall");
                 }
-                if (JumpButtonUp && Speed.y > 0 && !PlayerOnGround)
+                if (JumpButtonUp && Speed.y > 0 && !PlayerOnGround && !justHitTrampoline)
                 {
                     Speed.y = 0;
+                }
+                if(hitTrampoline){
+                    Speed.y = 2000;
+                    hitTrampoline = false;
                 }
                 PlayerPhysics.SetTargetSpeed(Speed);
                 ResetStats();
@@ -232,5 +236,20 @@ public class PlayerMovementModifier : MonoBehaviour {
     {
         paused = false;
     }
+
+    public void TrampolineJump(){
+        hitTrampoline = true;
+        justHitTrampoline = true;
+        StartCoroutine("ResetJustHitTrampoline");
+    }
+
+    IEnumerator ResetJustHitTrampoline(){
+        for(int i = 0; i < 10; i++){
+            yield return null;
+        }
+        justHitTrampoline = false;
+        yield return null;
+    }
+
 
 }

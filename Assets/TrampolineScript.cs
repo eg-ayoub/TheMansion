@@ -11,12 +11,13 @@ public class TrampolineScript : MonoBehaviour {
         ready = true;
     }
 	private void OnTriggerEnter2D(Collider2D other) {
-		if(other.CompareTag("Player") && !paused && ready){
+        bool ontop = PlayerInstanciationScript.Player.transform.position.y - 15 > transform.position.y; 
+		if(other.CompareTag("Player") && !paused && ready && ontop){
             GetComponent<AudioSource>().Play();
             anim.SetTrigger("bump");
             PlayerInstanciationScript.Player.transform.Translate(100 * Vector2.up);
             PlayerInstanciationScript.Player.GetComponentInChildren<Animator>().SetTrigger("jump");
-			PlayerInstanciationScript.Player.GetComponentInChildren<PlayerMovementModifier>().SetSpeed(new Vector2(0, 2000));
+			PlayerInstanciationScript.Player.GetComponentInChildren<PlayerMovementModifier>().TrampolineJump();
             StartCoroutine("Reset");
 		}
 	}
@@ -27,6 +28,7 @@ public class TrampolineScript : MonoBehaviour {
             yield return null;
         }
         ready = true;
+        //PlayerInstanciationScript.Player.GetComponentInChildren<PlayerMovementModifier>().ResetTrampoline();
         yield return null;
     }
 	public void OnPauseGame()

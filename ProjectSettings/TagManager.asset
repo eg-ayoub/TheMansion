@@ -11,6 +11,7 @@ TagManager:
   - WayPoint
   - Projectile
   - Door
+  - trampoline
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Projectile
   - wayPoint
   - Door
-  - 
+  - trampoline
   - 
   - 
   - 
