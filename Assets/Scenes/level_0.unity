@@ -2376,6 +2376,11 @@ Prefab:
       propertyPath: m_HDR
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 82270916868745766, guid: 8a64521ccf9ee3041a4f2368e7463c30,
+        type: 2}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 212509648582772490, guid: 8a64521ccf9ee3041a4f2368e7463c30, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 8a64521ccf9ee3041a4f2368e7463c30, type: 2}

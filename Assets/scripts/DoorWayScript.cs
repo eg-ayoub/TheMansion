@@ -12,12 +12,10 @@ public class DoorWayScript : MonoBehaviour {
 			levelManager.EnterDoor();
 		}
 	}
-
 	public void OnPauseGame()
     {
         paused = true;
     }
-
     public void OnResumeGame()
     {
         paused = false;

@@ -43,7 +43,7 @@ public class PlayerMovementModifier : MonoBehaviour {
     bool swimming;
     bool onSurface;
 
-    bool hitTrampoline, justHitTrampoline;
+    bool hitTrampoline, justHitTrampoline, freeze;
 
 
     Animator anim;
@@ -185,6 +185,10 @@ public class PlayerMovementModifier : MonoBehaviour {
                     Speed.y = 2000;
                     hitTrampoline = false;
                 }
+                if(freeze){
+                    Speed = Vector2.zero;
+                    freeze = false;
+                }
                 PlayerPhysics.SetTargetSpeed(Speed);
                 ResetStats();
             }
@@ -249,6 +253,10 @@ public class PlayerMovementModifier : MonoBehaviour {
         }
         justHitTrampoline = false;
         yield return null;
+    }
+
+    public void Freeze(){
+        freeze = true;
     }
 
 

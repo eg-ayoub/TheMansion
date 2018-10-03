@@ -39,9 +39,10 @@ public class level_manager : MonoBehaviour {
 		playerHealth.ToggleGamePaused();
 		for(int i =0; i < 60; i++){
 			yield return null;
+			PlayerInstanciationScript.Player.GetComponentInChildren<PlayerMovementModifier>().Freeze();
 		}
 		playerHealth.ToggleGamePaused();
-		PlayerInstanciationScript.Player.GetComponentInChildren<PlayerMovementModifier>().SetSpeed(Vector2.zero);
+		//PlayerInstanciationScript.Player.GetComponentInChildren<PlayerMovementModifier>().Freeze();
 		SceneManager.LoadSceneAsync(level + 1);	
 	}
 }
