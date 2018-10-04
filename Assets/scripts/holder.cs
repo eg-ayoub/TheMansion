@@ -16,10 +16,16 @@ public class holder : MonoBehaviour {
 		counter = 0;
 	}
 	
+	bool paused;
 	void Update () {
-		buttonDown = Input.GetButtonDown("back");
-		buttonUp = Input.GetButtonUp("back");
-
+		if(paused){
+			buttonDown = Input.GetButtonDown("quit");
+			buttonUp = Input.GetButtonUp("quit");
+		}else{
+			buttonDown = Input.GetButtonDown("back");
+			buttonUp = Input.GetButtonUp("back");
+		}
+		
 		switch(state){
 			case states.IDLE:
 				if(buttonDown){
@@ -39,7 +45,11 @@ public class holder : MonoBehaviour {
 						state = states.IDLE;
 						anim.Play("load", -1, 0f);
 						anim.SetFloat("speed", 0);
-						PlayerInstanciationScript.Player.GetComponentInChildren<PlayerHealthManager>().SendMessage("TakeDamage", 1);
+						if(paused){
+							Application.Quit();
+						}else{
+							PlayerInstanciationScript.Player.GetComponentInChildren<PlayerHealthManager>().SendMessage("TakeDamage", 1);
+						}
 					}
 				}
 				break;
@@ -60,4 +70,19 @@ public class holder : MonoBehaviour {
 
 		}
 	}
+
+	public void OnPauseGame()
+    {
+        paused = true;
+		state = states.IDLE;
+		counter = 0;
+
+    }
+
+    public void OnResumeGame()
+    {
+        paused = false;
+		state = states.IDLE;
+		counter = 0;
+    }
 }

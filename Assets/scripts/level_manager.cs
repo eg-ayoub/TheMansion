@@ -29,7 +29,7 @@ public class level_manager : MonoBehaviour {
 			GetComponent<AudioSource>().Play();
 			playerHealth.IncrementScene();
 			transitionText.SetActive(true);
-			transitionText.GetComponentInChildren<Text>().text = (level + 1 == 31 ? "Credits" : "" + (level + 1));
+			transitionText.GetComponentInChildren<Text>().text = (level + 1 == 31 ? "" : "" + (level + 1));
 			StartCoroutine("pass");
 			done = true;
 		}

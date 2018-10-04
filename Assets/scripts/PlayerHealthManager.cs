@@ -152,4 +152,5 @@ public class PlayerHealthManager : MonoBehaviour {
         }
         canTogglepause = true;
     }
+
 }

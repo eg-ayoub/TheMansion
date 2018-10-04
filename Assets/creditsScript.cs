@@ -9,7 +9,7 @@ public class creditsScript : MonoBehaviour {
 		StartCoroutine("QuitGame");
 	}
 	IEnumerator QuitGame(){
-		for(int i = 0; i < 300; i++){
+		for(int i = 0; i < 1080; i++){
 			yield return null;
 		}
 		Application.Quit();
