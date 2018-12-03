@@ -53,17 +53,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Beam.cs" />
-     <Compile Include="Assets\CameraShakerScript.cs" />
-     <Compile Include="Assets\creditsScript.cs" />
-     <Compile Include="Assets\EnemyAI.cs" />
-     <Compile Include="Assets\EnemyClipManager.cs" />
-     <Compile Include="Assets\EnemyDamage.cs" />
-     <Compile Include="Assets\EnemyModifier.cs" />
-     <Compile Include="Assets\EnemyPhysics.cs" />
-     <Compile Include="Assets\GhostAI.cs" />
-     <Compile Include="Assets\PlayerAnimatorComplement.cs" />
-     <Compile Include="Assets\PortalScript.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -109,11 +98,20 @@
      <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
      <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+     <Compile Include="Assets\scripts\Beam.cs" />
+     <Compile Include="Assets\scripts\CameraShakerScript.cs" />
      <Compile Include="Assets\scripts\CollisionSensorScript.cs" />
      <Compile Include="Assets\scripts\CountDownPlatform.cs" />
+     <Compile Include="Assets\scripts\creditsScript.cs" />
      <Compile Include="Assets\scripts\DeadZoneScript.cs" />
      <Compile Include="Assets\scripts\DoorWayScript.cs" />
+     <Compile Include="Assets\scripts\EnemyAI.cs" />
+     <Compile Include="Assets\scripts\EnemyClipManager.cs" />
+     <Compile Include="Assets\scripts\EnemyDamage.cs" />
+     <Compile Include="Assets\scripts\EnemyModifier.cs" />
+     <Compile Include="Assets\scripts\EnemyPhysics.cs" />
      <Compile Include="Assets\scripts\FallingPlatScript.cs" />
+     <Compile Include="Assets\scripts\GhostAI.cs" />
      <Compile Include="Assets\scripts\GroundVectorCalculator.cs" />
      <Compile Include="Assets\scripts\HealPointScript.cs" />
      <Compile Include="Assets\scripts\holder.cs" />
@@ -123,18 +121,20 @@
      <Compile Include="Assets\scripts\laserScript.cs" />
      <Compile Include="Assets\scripts\level_manager.cs" />
      <Compile Include="Assets\scripts\MainMenuScript.cs" />
+     <Compile Include="Assets\scripts\PlayerAnimatorComplement.cs" />
      <Compile Include="Assets\scripts\PlayerClipManager.cs" />
      <Compile Include="Assets\scripts\PlayerControllerScript.cs" />
      <Compile Include="Assets\scripts\PlayerHealthManager.cs" />
      <Compile Include="Assets\scripts\PlayerInstanciationScript.cs" />
      <Compile Include="Assets\scripts\PlayerMovementModifier.cs" />
      <Compile Include="Assets\scripts\PlayerPhysics.cs" />
+     <Compile Include="Assets\scripts\PortalScript.cs" />
      <Compile Include="Assets\scripts\ProjectileLauncher.cs" />
      <Compile Include="Assets\scripts\Rectangle.cs" />
      <Compile Include="Assets\scripts\SensorOnOff.cs" />
      <Compile Include="Assets\scripts\SimpleProjectile.cs" />
-     <Compile Include="Assets\TrampolineScript.cs" />
-     <Compile Include="Assets\WayPointScript.cs" />
+     <Compile Include="Assets\scripts\TrampolineScript.cs" />
+     <Compile Include="Assets\scripts\WayPointScript.cs" />
      <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Fog.shader" />
